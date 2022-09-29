@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>RTG Employee Directory | Login</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <!-- Main -->
+    <main id="login">
+      <section class="login-container">
+        <div class="login-header">
+          <h2>Login</h2>
+        </div>
+        <div class="login-form-container">
+          <form action="login" method="post" id="login-form">
+            <div class="form-field">
+              <input
+                type="email"
+                name="loginEmail"
+                id="loginEmail"
+                placeholder="Enter your Email Address"
+              />
+            </div>
+            <div class="form-field">
+              <input
+                type="password"
+                name="loginPassword"
+                id="loginPassword"
+                placeholder="Enter your Password"
+              />
+            </div>
+            <input type="submit" class="loginBtn" value="Login" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>

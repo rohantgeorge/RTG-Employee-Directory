@@ -1,0 +1,124 @@
+<% var employeeName = ""; var employeePosition = ""; var employeeID = ""; var
+employeePhone = ""; var employeeEmail = ""; var employeeAddress = ""; var
+employeeDesc = ""; var employeeNameError = ""; var employeePositionError = "";
+var employeeIDError = ""; var employeePhoneError = ""; var employeeEmailError =
+""; var employeeAddressError = ""; var employeeDescError = ""; if (typeof er !=
+"undefined") { for (var error of er) { switch (error.param) { case
+"employeeName": employeeName = error.value; employeeNameError = error.msg;
+break; case "employeePosition": employeePosition = error.value;
+employeePositionError = error.msg; break; case "employeeID": employeeID =
+error.value; employeeIDError = error.msg; break; case "employeePhone":
+employeePhone = error.value; employeePhoneError = error.msg; break; case
+"employeeEmail": employeeEmail = error.value; employeeEmailError = error.msg;
+break; case "employeeAddress": employeeAddress = error.value;
+employeeAddressError = error.msg; break; case "employeeDesc": employeeDesc =
+error.value; employeeDescError = error.msg; break; } } } %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>RTG Employee Directory | Add New Employee</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <main id="addNewPage">
+      <section class="container">
+        <h1 class="text-center">Add/Edit Employee</h1>
+        <form action="process" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="employeeImg">Upload Employee Image</label>
+            <input type="file" id="employeeImg" name="employeeImg" />
+          </div>
+
+          <div class="form-group">
+            <label for="employeeName">Employee Name</label>
+            <input
+              type="text"
+              name="employeeName"
+              id="employeeName"
+              value="<%= employeeName %>"
+            />
+            <p class="error"><%= employeeNameError %></p>
+          </div>
+
+          <div class="form-group">
+            <label for="employeePosition">Employee Position</label>
+            <input
+              type="text"
+              name="employeePosition"
+              id="employeePosition"
+              value="<%= employeePosition %>"
+            />
+            <p class="error"><%= employeePositionError %></p>
+          </div>
+
+          <div class="form-group">
+            <label for="employeeID">Employee ID</label>
+            <input
+              type="text"
+              name="employeeID"
+              id="employeeID"
+              value="<%= employeeID %>"
+            />
+            <p class="error"><%= employeeIDError %></p>
+          </div>
+
+          <div class="form-group">
+            <label for="employeePhone">Employee Phone</label>
+            <input
+              type="tel"
+              name="employeePhone"
+              id="employeePhone"
+              value="<%= employeePhone %>"
+            />
+            <p class="error"><%= employeePhoneError %></p>
+          </div>
+
+          <div class="form-group">
+            <label for="employeeEmail">Employee Email</label>
+            <input
+              type="email"
+              name="employeeEmail"
+              id="employeeEmail"
+              value="<%= employeeEmail %>"
+            />
+            <p class="error"><%= employeeEmailError %></p>
+          </div>
+
+          <div class="form-group">
+            <label for="employeeAddress">Employee Address</label>
+            <input
+              type="text"
+              name="employeeAddress"
+              id="employeeAddress"
+              value="<%= employeeAddress %>"
+            />
+            <p class="error"><%= employeeAddressError %></p>
+          </div>
+
+          <div class="form-group fullwidth">
+            <label for="employeeDesc">Employee Description</label>
+            <input type="text" name="employeeDesc" id="employeeDesc" />
+            <p class="error"><%= employeeDescError %></p>
+          </div>
+          <div class="form-group"></div>
+          <div class="form-group">
+            <input type="submit" value="Add Employee" class="add-btn" />
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/tinymce/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector: "#employeeDesc",
+      });
+    </script>
+  </body>
+</html>

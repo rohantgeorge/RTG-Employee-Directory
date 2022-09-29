@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Dosis:wght@200;300;400;500;600;700;800&family=Mouse+Memoirs&family=Oswald:wght@200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --font-family-Dancing-Script: "Dancing Script", sans-serif;
+  --font-family-Dosis: "Dosis", sans-serif;
+  --font-family-Mouse-Memoirs: "Mouse Memoirs", sans-serif;
+  --font-family-Oswald: "Oswald", sans-serif;
+  --font-family-Roboto: "Roboto", sans-serif;
+
+  --bg-primary: #ff9b44;
+  --bg-secondary: #55ce63;
+  --bg-black-1: #16191c;
+  --bg-black-2: #23272b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: var(--font-family-Roboto);
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+main {
+  background-color: var(--bg-black-2);
+  min-height: calc(100vh - 130px);
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-center {
+  text-align: center;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+/************************* Header CSS Starts *************************/
+header {
+  background-color: var(--bg-black-1);
+  height: 70px;
+  border-bottom: 2px solid var(--bg-black-2);
+}
+
+header .top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+header .logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+
+header h2.tagline a {
+  font-size: 1.3rem;
+  color: #c0c0c0;
+  font-family: var(--font-family-Oswald);
+}
+
+/* Hamburger menu */
+header #toggle_btn {
+  color: #999;
+  float: left;
+  font-size: 26px;
+  line-height: 70px;
+  padding: 0 10px;
+}
+
+header #toggle_btn .bar-icon {
+  display: inline-block;
+  width: 21px;
+}
+
+header #toggle_btn .bar-icon span {
+  background-color: #bbc4cc;
+  display: block;
+  float: left;
+  height: 2px;
+  width: 21px;
+  margin: 0 0 5px;
+  border-radius: 50px;
+}
+
+header #toggle_btn .bar-icon span:nth-child(2) {
+  width: 15px;
+}
+
+/* Navigation Menu */
+header nav {
+  width: 40%;
+}
+
+header ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .nav-item {
+  padding: 0 1rem;
+  position: relative;
+}
+
+header .nav-item:after {
+  content: "";
+  width: 0%;
+  height: 1.5px;
+  background: var(--bg-primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease-in;
+}
+
+header ul .nav-item .nav-link {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-family: var(--font-family-Roboto);
+  transition: 0.3s ease-in;
+}
+
+header .nav-item:hover:after {
+  width: 100%;
+}
+
+header .nav-item:hover .nav-link {
+  color: var(--bg-primary);
+}
+
+/* Search Container */
+.search_container {
+  width: 20%;
+  position: relative;
+}
+
+input#search_bar {
+  width: 100%;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid var(--bg-black-2);
+  padding: 0 8px;
+  background-color: var(--bg-black-2);
+}
+
+button.srch_btn {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid var(--bg-black-1);
+  background: var(--bg-black-1);
+  height: 40px;
+  width: 40px;
+  border-radius: 0 50px 50px 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+/************************* Header CSS Ends *************************/
+
+/************************* Staff Grid CSS Starts *************************/
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5rem 0 3rem;
+}
+
+.page-title {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.add-btn {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--bg-primary);
+  color: #ffffff;
+  float: right;
+  font-weight: 500;
+  min-width: 140px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.add-btn:hover {
+  background-color: transparent;
+  color: var(--bg-primary);
+}
+
+.staff-grid-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.profile-widget {
+  background-color: var(--bg-black-1);
+  border: 1px solid #2e3840;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px 0 rgb(0 0 0 / 20%);
+}
+
+.profile-widget .profile-img {
+  cursor: pointer;
+  height: 80px;
+  margin: 0 auto;
+  position: relative;
+  width: 80px;
+}
+
+.avatar {
+  display: inline-block;
+  font-weight: 500;
+  height: 80px;
+  width: 80px;
+  position: relative;
+  white-space: nowrap;
+  margin: 0 10px 0 0;
+  border-radius: 50%;
+}
+
+.avatar > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-widget .dropdown.profile-action {
+  text-align: right;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 15px;
+}
+
+.profile-widget .dropdown.profile-action .action-icon {
+  color: #777;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.profile-widget .dropdown.profile-action .action-icon img {
+  width: 5px;
+}
+
+.profile-widget .user-name a {
+  color: #bbc4cc;
+  margin: 15px 0 5px;
+  display: block;
+}
+
+.position {
+  color: #8e8e8e;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: inherit;
+  transform-origin: left top 0;
+  -webkit-transform-origin: left top 0;
+  -ms-transform-origin: left top 0;
+}
+
+.profile-widget .dropdown.profile-action:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+/************************* Staff Grid CSS Ends *************************/
+
+/************************* Login CSS Starts *************************/
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: #ddd;
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+#login input {
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+#login .form-field:last-child input {
+  margin-bottom: 0;
+}
+
+#login .loginBtn {
+  background-color: var(--bg-primary);
+  border-color: var(--bg-primary);
+  color: #fff;
+  font-size: 1.4rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-family: var(--font-family-Dosis);
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#login .loginBtn:hover {
+  background-color: transparent;
+  color: var(--bg-primary);
+}
+/************************* Login CSS Ends *************************/
+
+/************************* Thank You CSS Starts *************************/
+#thankyou-page {
+  padding: 2rem;
+  color: #fff;
+}
+
+#thankyou-page h1 {
+  font-size: 3rem;
+  font-family: var(--font-family-Oswald);
+}
+
+#thankyou-page h3 {
+  font-size: 1.5rem;
+  font-family: var(--font-family-Dosis);
+  font-weight: 400;
+}
+/************************* Thank You CSS Ends *************************/
+
+/************************* Single Employee CSS Sarts *************************/
+#employee-profile * {
+  font-family: var(--font-family-Oswald);
+}
+
+#employee-profile {
+  background: var(--bg-black-1);
+  padding: 4rem;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 2.5rem;
+}
+
+#employee-profile .left-side {
+  width: 48%;
+  display: flex;
+}
+
+#employee-profile .left-side div:last-child {
+  padding-left: 2rem;
+}
+
+#employee-profile .profile-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#employee-profile .profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#employee-profile .right-side {
+  width: 48%;
+}
+
+#employee-profile h3 {
+  font-size: 1.8rem;
+}
+
+/************************* Single Employee CSS Ends *************************/
+
+/************************* Add Employee CSS Starts *************************/
+#addNewPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#addNewPage .container {
+  max-width: 700px;
+  padding: 2rem;
+}
+
+#addNewPage .container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#addNewPage .container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.3rem;
+  color: #fff;
+}
+
+#addNewPage .container form .form-group {
+  width: 48%;
+  margin-bottom: 1rem;
+}
+
+#addNewPage .container form .form-group.fullwidth {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#addNewPage .container form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: var(--font-family-Dosis);
+}
+
+#addNewPage .container form input,
+#addNewPage .container form select {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+}
+
+#addNewPage .container form textarea {
+  width: 100%;
+}
+/************************* Add Employee CSS Ends *************************/
+
+/************************* Footer CSS Starts *************************/
+footer {
+  background: var(--bg-black-1);
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+}
+/************************* Footer CSS Ends *************************/
+
+@media only screen and (min-width: 981px) {
+  .d-lg-none {
+    display: none;
+  }
+}
+  

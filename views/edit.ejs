@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>RTG Employee Directory | Add New Employee</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <main id="addNewPage">
+      <section class="container">
+        <h1 class="text-center">Add/Edit Employee</h1>
+        <form
+          action="/editprocess/<%= _id %>"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="form-group">
+            <label for="employeeImg">Upload Employee Image</label>
+            <img
+              style="width: 50px"
+              src="/uploads/<%= employeeImgName %>"
+              alt="Photo"
+            />
+            <input type="file" id="employeeImg" name="employeeImg" />
+          </div>
+          <div class="form-group">
+            <label for="employeeName">Employee Name</label>
+            <input
+              type="text"
+              name="employeeName"
+              id="employeeName"
+              value="<%= employeeName %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="employeePosition">Employee Position</label>
+            <input
+              type="text"
+              name="employeePosition"
+              id="employeePosition"
+              value="<%= employeePosition %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="employeeID">Employee ID</label>
+            <input
+              type="text"
+              name="employeeID"
+              id="employeeID"
+              value="<%= employeeID %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="employeePhone">Employee Phone</label>
+            <input
+              type="tel"
+              name="employeePhone"
+              id="employeePhone"
+              value="<%= employeePhone %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="employeeEmail">Employee Email</label>
+            <input
+              type="email"
+              name="employeeEmail"
+              id="employeeEmail"
+              value="<%= employeeEmail %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="employeeAddress">Employee Address</label>
+            <input
+              type="text"
+              name="employeeAddress"
+              id="employeeAddress"
+              value="<%= employeeAddress %>"
+            />
+          </div>
+
+          <div class="form-group fullwidth">
+            <label for="employeeDesc">Employee Description</label>
+            <input
+              type="text"
+              name="employeeDesc"
+              id="employeeDesc"
+              value="<%= employeeDesc %>"
+            />
+          </div>
+          <div class="form-group"></div>
+          <div class="form-group">
+            <input type="submit" value="Add Employee" class="add-btn" />
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+
+    
+  </body>
+</html>

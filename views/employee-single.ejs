@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>RTG Employee Directory | <%= employeeName %></title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <!-- Main -->
+    <main>
+      <section class="container">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">Profile</h2>
+          </div>
+          <div></div>
+        </div>
+
+        <div id="employee-profile">
+          <div class="left-side">
+            <div class="profile-img">
+              <img
+                src="/uploads/<%= employeeImgName %>"
+                alt="<%= employeeName %>"
+              />
+            </div>
+            <div class="employee-details">
+              <h3 class="employee-name"><%= employeeName %></h3>
+              <h4><%= employeePosition %></h4>
+              <h4>Employee ID: FT-<%= employeeID %></h4>
+            </div>
+          </div>
+          <div class="right-side">
+            <h4>
+              Phone: <a href="tel:<%= employeePhone %>"><%= employeePhone %></a>
+            </h4>
+            <h4>
+              Email:
+              <a href="mailto:<%= employeeEmail %>"><%= employeeEmail %></a>
+            </h4>
+            <h4>Address: <%= employeeAddress %></h4>
+          </div>
+          <div class="employee-description">
+            <p><%= employeeDesc %></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>

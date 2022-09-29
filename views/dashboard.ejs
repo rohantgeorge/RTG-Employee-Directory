@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>RTG Employee Directory | Dashboard</title>
+  </head>
+  <body>
+    <%- include('partials/nav.ejs') %>
+
+    <!-- Main -->
+    <main>
+      <section class="container">
+        <div class="page-header">
+          <div>
+            <h2 class="page-title">All Employees</h2>
+          </div>
+          <div>
+            <a href="/" class="btn add-btn"
+              ><i class="fa fa-plus"></i> Add Employee</a
+            >
+          </div>
+        </div>
+
+        <div class="row staff-grid-row">
+          <% for(var employee of employees){ %>
+          <div class="single-employee">
+            <div class="profile-widget">
+              <div class="profile-img">
+                <a href="/employee-single/<%= employee._id %>" class="avatar"
+                  ><img src="/uploads/<%= employee.employeeImgName %>" alt=""
+                /></a>
+              </div>
+              <div class="dropdown profile-action">
+                <a href="javascript:void(0);" class="action-icon"
+                  ><img src="images/three-dots.svg"
+                /></a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/edit/<%= employee._id %>"
+                    ><i class="fa fa-pencil"></i> Edit</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="/deleteSuccess/<%= employee._id %>"
+                    ><i class="fa fa-trash-o"></i> Delete</a
+                  >
+                </div>
+              </div>
+              <h4 class="user-name">
+                <a href="/employee-single/<%= employee._id %>"
+                  ><%= employee.employeeName %></a
+                >
+              </h4>
+              <div class="position"><%= employee.employeePosition %></div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>
